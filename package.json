@@ -1,0 +1,12 @@
+{
+    "name": "com.rastudio.setuptools",
+    "version": "0.1.0",
+    "displayName": "RAStudio Setup Tools",
+    "description": "A set of tools to set up Unity projects with default settings and folders.",
+    "unity": "6000.0",
+    "dependencies": {},
+    "author":{
+      "name": "RAStudio"
+    }
+  }
+  
