@@ -4,11 +4,23 @@
 
 ## Features
 
+- **Dynamic Folder Creation:** Add custom folders dynamically via the UI.
 - **Update Company Name:** Easily set the company name in Unity's player settings.
 - **Update Root Namespace:** Change the root namespace used for code generation.
 - **Create Default Folders:** Automatically create a set of predefined folders in your Unity project's `Assets` directory.
 
 ## Installation
+
+### Option 1: Using Unity Package Manager
+
+1. Open your Unity project.
+2. In the Unity Editor, go to `Window > Package Manager`.
+3. Click the `+` button in the top-left corner of the Package Manager window.
+4. Select `Add package from git URL...`.
+5. Enter the following URL: `https://github.com/SubZeroX9/RAStudio-Setup-Tools.git`
+6. Click `Add` to install the package.
+
+### Option 2: Manual Installation
 
 1. **Download the Package:**
 
@@ -16,27 +28,22 @@
 
 2. **Add to Unity Project:**
    - Copy the contents of the `Packages` directory from this repository into the `Packages` folder of your Unity project.
-     no
 
 ## Usage
 
-1. **Update Company Name:**
+1. **Open Setup Window:**
 
-   - In Unity, go to `Tools > RAStudio > Setup > Update Company Name` to set the company name to "RAStudio". You can modify the `Setup` script to use a different name if needed.
+   - In Unity, go to `Tools > RAStudio > Setup Window` to open the RAStudio Setup Tools window.
 
-2. **Update Root Namespace:**
+2. **Folders Tab:**
 
-   - Navigate to `Tools > RAStudio > Setup > Update Root Namespace` to set the root namespace to "RAStudio". You can change the namespace in the `Setup` script as required.
+   - **Use Default Folder Names:** Toggle to use default folder names.
+   - **Add Custom Folders:** Click "Add Folder" to add fields for custom folder names.
+   - **Create Folders:** Click "Create" to create folders in your project's `Assets` directory based on the specified names.
 
-3. **Create Default Folders:**
-   - Use the menu option `Tools > RAStudio > Setup > Create Default Folders` to create the following default folders in your project's `Assets` directory:
-     - `_Project`
-     - `Animation`
-     - `Art`
-     - `Prefabs`
-     - `ScriptableObjects`
-     - `Scripts`
-     - `Settings`
+3. **Settings Tab:**
+   - **Update Company Name:** Toggle to use the default company name or enter a custom name. Click "Update" to apply the changes.
+   - **Update Root Namespace:** Toggle to use the default root namespace or enter a custom namespace. Click "Update" to apply the changes.
 
 ## Contributing
 

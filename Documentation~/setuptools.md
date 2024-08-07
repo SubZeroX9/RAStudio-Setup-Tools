@@ -6,11 +6,23 @@
 
 ## Features
 
+- **Dynamic Folder Creation:** Add custom folders dynamically via the UI.
 - **Update Company Name:** Set the company name used in Unity's player settings.
 - **Update Root Namespace:** Change the root namespace used for code generation in Unity.
 - **Create Default Folders:** Automatically create a set of predefined folders in the `Assets` directory of your project.
 
 ## Installation
+
+### Option 1: Using Unity Package Manager
+
+1. Open your Unity project.
+2. In the Unity Editor, go to `Window > Package Manager`.
+3. Click the `+` button in the top-left corner of the Package Manager window.
+4. Select `Add package from git URL...`.
+5. Enter the following URL: `https://github.com/SubZeroX9/RAStudio-Setup-Tools.git`
+6. Click `Add` to install the package.
+
+### Option 2: Manual Installation
 
 1. **Download the Package:**
 
@@ -20,42 +32,26 @@
 
    - Copy the contents of the `Packages` directory from this repository into the `Packages` folder of your Unity project.
 
-   Alternatively, you can add the package via the Unity Package Manager by referencing the Git URL directly.
-
 ## Usage
 
-### Update Company Name
+### Open Setup Window
 
-To update the company name:
+1. In Unity, go to `Tools > RAStudio > Setup Window` to open the RAStudio Setup Tools window.
 
-1. Open Unity and navigate to `Tools > RAStudio > Setup > Update Company Name`.
-2. The company name will be set to "RAStudio" by default. You can modify the `Setup` script to use a different name if needed.
+### Folders Tab
 
-### Update Root Namespace
+- **Use Default Folder Names:** Toggle to use default folder names.
+- **Add Custom Folders:** Click "Add Folder" to add fields for custom folder names.
+- **Create Folders:** Click "Create" to create folders in your project's `Assets` directory based on the specified names.
 
-To update the root namespace:
+### Settings Tab
 
-1. Open Unity and navigate to `Tools > RAStudio > Setup > Update Root Namespace`.
-2. The root namespace will be set to "RAStudio" by default. You can change the namespace in the `Setup` script as required.
-
-### Create Default Folders
-
-To create default folders:
-
-1. Open Unity and navigate to `Tools > RAStudio > Setup > Create Default Folders`.
-2. The following folders will be created in the `Assets` directory:
-   - `_Project`
-   - `Animation`
-   - `Art`
-   - `Prefabs`
-   - `ScriptableObjects`
-   - `Scripts`
-   - `Settings`
+- **Update Company Name:** Toggle to use the default company name or enter a custom name. Click "Update" to apply the changes.
+- **Update Root Namespace:** Toggle to use the default root namespace or enter a custom namespace. Click "Update" to apply the changes.
 
 ## Troubleshooting
 
 - **Folders Not Created:** Ensure you have the necessary permissions to create folders in the `Assets` directory. Check Unity console for any errors and ensure that the `Setup` script is correctly placed in the `Editor` folder.
-
 - **Company Name or Namespace Not Updated:** Verify that you have the correct permissions to change player settings and project settings. Make sure you are using the latest version of the package.
 
 ## Contributing

@@ -2,6 +2,7 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 using static UnityEditor.AssetDatabase;
+using static System.IO.Path;
 
 namespace RAStudio.SetupTools.Editor
 {
@@ -10,16 +11,13 @@ namespace RAStudio.SetupTools.Editor
     /// </summary>
     public static class Setup
     {
-        #region Company Name
-        /// <summary>
-        /// Menu item to update the company name to the default value "RAStudio".
-        /// </summary>
-        [MenuItem("Tools/RAStudio/Setup/Update Company Name")]
-        public static void UpdateCompanyNameDefault()
-        {
-            string companyName = "RAStudio";
-            UpdateCompanyName(companyName);
-        }
+        #region Constants
+        private const string CompanyName = "RAStudio";
+        private const string RootNamespace = "RAStudio";
+        public static readonly string DefaultRootFolder = "_Project";
+        public static readonly string[] DefaultFolders =
+            { "Animation", "Art", "Prefabs", "ScriptableObjects", "Scripts", "Settings" };
+        #endregion
 
         /// <summary>
         /// Updates the company name in Unity's player settings.
@@ -30,18 +28,6 @@ namespace RAStudio.SetupTools.Editor
             PlayerSettings.companyName
                 = companyName;
         }
-        #endregion
-
-        #region Namespace
-        /// <summary>
-        /// Menu item to update the root namespace to the default value "RAStudio".
-        /// </summary>
-        [MenuItem("Tools/RAStudio/Setup/Update Root Namespace")]
-        public static void UpdateRootNamespaceDefault()
-        {
-            string rootNamespace = "RAStudio";
-            UpdateRootNamespace(rootNamespace);
-        }
 
         /// <summary>
         /// Updates the root namespace used for code generation in Unity.
@@ -51,42 +37,44 @@ namespace RAStudio.SetupTools.Editor
         {
             EditorSettings.projectGenerationRootNamespace = rootNamespace;
         }
-        #endregion
 
-        #region Default Folders
         /// <summary>
-        /// Menu item to create default folders in the project's Assets directory.
+        /// Creates the default folders in the Unity project.
         /// </summary>
-        [MenuItem("Tools/RAStudio/Setup/Create Default Folders")]
+
         public static void CreateDefaultFolders()
         {
-            Folders.CreateDefault("_Project","Animation","Art","Prefabs","ScriptableObjects","Scripts","Settings");
+            Folders.Create(DefaultRootFolder, DefaultFolders);
+            Refresh();
+            Folders.Move(DefaultRootFolder, "Scenes");
             Refresh();
         }
 
         /// <summary>
-        /// Provides methods for creating folders in the Unity project.
+        /// Creates folders in the Unity project.
         /// </summary>
-        public static class Folders
+
+        public static void CreateFolders(string rootFolderName, string[] customFolders)
         {
-            /// <summary>
-            /// Creates a set of folders in the specified root directory within the project's Assets folder.
-            /// </summary>
-            /// <param name="root">The root folder where the new folders will be created.</param>
-            /// <param name="folders">An array of folder names to create.</param>
-            public static void CreateDefault(string root, params string[] folders)
-            {
-                string fullPath = Path.Combine(Application.dataPath, root);
-                foreach (var folder in folders)
-                {
-                    string path = Path.Combine(fullPath, folder);
-                    if (!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                }
-            }
+            Folders.Create(rootFolderName, customFolders);
+            Refresh();
         }
-        #endregion
+
+        /// <summary>
+        /// Updates the default company name in Unity's player settings.
+        /// </summary>
+
+        public static void UpdateDefaultCompanyName()
+        {
+            UpdateCompanyName(CompanyName);
+        }
+
+        /// <summary>
+        /// Updates the default root namespace used for code generation in Unity.
+        /// </summary>
+        public static void UpdateDefaultRootNamespace()
+        {
+            UpdateRootNamespace(RootNamespace);
+        }
     }
 }

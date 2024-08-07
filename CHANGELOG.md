@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2024-08-06
+
+### Added
+
+- **Dynamic Folder Creation**: Added the ability to create custom folders dynamically.
+- **Tab View**: Integrated tab view for better organization of settings.
+  - **Folders Tab**: Allows users to create folders with either default or custom names.
+  - **Settings Tab**: Allows users to update the company name and root namespace.
+
+### Changed
+
+- **Transition to UI Toolkit**: Replaced menu items with a new UI Editor window using the Unity UI Toolkit for better user experience and organization.
+
 ## [1.0.0] - 2024-07-20
 
 ### Added

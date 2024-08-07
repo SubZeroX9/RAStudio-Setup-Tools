@@ -1,0 +1,22 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/MyTools/Editor/UI/SetupEditorWindow.uss?fileID=7433441132597879392&amp;guid=3792bf77ecac74b4d9b6f91f641d0d1f&amp;type=3#SetupEditorWindow" />
+    <engine:TabView class="tab-view">
+        <engine:Tab label="Folders" name="foldersTab" enabled="true" class="tab">
+            <engine:Toggle label="Use Default Folder Names:" value="true" name="default-names-toggle" />
+            <engine:VisualElement name="folders-container" class="folders-container" style="flex-grow: 1; display: flex;">
+                <engine:Button text="Add SubFolder" name="add-folder-btn" class="add-subfolder-btn add-folder-btn" />
+                <engine:TextField label="Root folder name:" placeholder-text="Root Name" name="root-folder-name" />
+            </engine:VisualElement>
+            <engine:Button text="Create" name="create-btn" class="create-btn" />
+        </engine:Tab>
+        <engine:Tab label="Settings" name="settingsTab" focusable="false" class="tab">
+            <engine:Toggle label="Default Company Name" value="true" name="default-company-name-toggle" />
+            <engine:TextField label="Name:" placeholder-text="Company Name" name="company-name-field" />
+            <engine:Button text="Update" name="update-company-name-btn" class="update-btn" />
+            <engine:VisualElement name="spacer" enabled="true" style="flex-grow: 1; display: flex; height: auto; min-height: 20px; max-height: 20px;" />
+            <engine:Toggle label="Default Root Namespace" name="default-root-namespace-toggle" value="true" />
+            <engine:TextField label="Namespace:" placeholder-text="Root Namespace" name="root-namespace-field" />
+            <engine:Button text="Update" name="update-root-namespace-btn" class="update-btn" />
+        </engine:Tab>
+    </engine:TabView>
+</engine:UXML>
