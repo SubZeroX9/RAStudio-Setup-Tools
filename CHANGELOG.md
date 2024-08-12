@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2024-08-12
+
+### Changed
+
+- **Removed Uneccessery Assemblies**: Removed The RAStudio.Tools.Editor assembly was changed to RAStudio.SetupTools.Editor
+
 ## [1.1.0] - 2024-08-06
 
 ### Added
